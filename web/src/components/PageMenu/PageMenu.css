@@ -1,0 +1,19 @@
+.page-menu {
+    background: #3aadef;
+}
+
+.page-menu-list {
+    list-style: none;
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    max-width: 800px;
+}
+
+.page-menu-list li {
+    padding: 5px;
+    margin-right: 20px;
+    font-size: 17px;
+    color: #fff;
+    cursor: pointer;
+}

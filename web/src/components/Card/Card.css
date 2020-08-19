@@ -1,0 +1,33 @@
+.components-card {
+    display: flex;
+    flex-direction: column;
+    max-width: 140px;
+    height: 355px;
+    cursor: pointer;
+}
+
+.components-card-image {
+    width: auto;
+    height: auto;
+    max-width: 150px;
+    max-height: 170px;
+    background-size: 100%;
+}
+
+.components-card-info {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.components-card-title {
+    font-size: 12px;
+    color: #777;
+}
+
+.components-card-price {
+    font-size: 23px;
+    color: #197abb;
+    font-weight: 700;
+}

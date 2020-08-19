@@ -1,0 +1,78 @@
+.page-header {
+    background: #4b83f9;
+    ;
+    display: flex;
+    justify-items: center;
+    justify-content: space-between;
+    padding: 25px;
+}
+
+.page-header-input {
+    display: flex;
+}
+
+.page-header-logo {
+    text-transform: uppercase;
+    font-size: 25px;
+    color: whitesmoke;
+}
+
+.page-header button {
+    cursor: pointer;
+}
+
+.page-header button,
+.page-header input {
+    outline: none;
+    border: none;
+    padding: 8px;
+    color: #535353;
+}
+
+.page-header input {
+    border-radius: 5px 0 0 5px;
+}
+
+.page-header-input input {
+    width: 150px;
+}
+
+.page-header-input button {
+    border-radius: 0 5px 5px 0;
+    width: 35px;
+}
+
+.page-header-button-cadastro button {
+    border-radius: 5px;
+    text-transform: uppercase;
+    background: whitesmoke;
+    font-weight: 700;
+    width: 180px;
+}
+
+@media (min-width: 900px) {
+    .page-header-input input {
+        width: 450px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .page-header-logo {
+        text-transform: uppercase;
+        font-size: 35px;
+        color: whitesmoke;
+    }
+    .page-header-input input {
+        width: 600px;
+        padding: 15px;
+    }
+    .page-header-input button {
+        width: 55px;
+    }
+    .page-header-button-cadastro button {
+        border-radius: 5px;
+        text-transform: uppercase;
+        padding: 15px;
+        width: 220px;
+    }
+}
