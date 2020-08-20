@@ -1,18 +1,18 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
 
 import './PageMenu.css';
 
 export default PageMenu => {
     return (
         <div className="page-menu">
-            <ul className="page-menu-list">
-                <li>Celulares e Smartphones</li>
-                <li>Livros</li>
-                <li>Games</li>
-                <li>Loading...</li>
-                <li>Loading...</li>
-            </ul>
+            <div className="page-menu-list">
+                <Link className="link" to="/celulares">Celulares e Smartphones</Link>
+                <Link className="link" to="/livros">Livros</Link>
+                <Link className="link" to="/games">Games</Link>
+                <Link className="link" to="/">filler</Link>
+                <Link className="link" to="/">filler</Link>
+            </div>
         </div>
     )
 }

@@ -1,19 +1,18 @@
 import React from 'react';
 import './Landing.css';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import SearchProducts from '../../components/SearchProducts/SearchProducts';
 
-import Card from '../../components/Card/Card';
-import PageHeader from '../../components/PageHeader/PageHeader';
-import PageMenu from '../../components/PageMenu/PageMenu';
-import PageBody from '../../components/PageBody/PageBody';
+const titulo = {
+    celulares: 'Celulares e Smartphones',
+    livros: 'Livros',
+    games: 'Games'
+}
 
-export default Landing => {
+export default ({Landing}) => {
     return (
         <div className="landing">
-                <PageHeader />    
-                <PageMenu />
-                <PageBody />
+            <SearchProducts titulo={titulo} />
         </div>
     )
 }

@@ -1,0 +1,51 @@
+{
+    "itens": [{
+            "id": 1,
+            "title": "Smartphone Motorola G8 Plus 64GB Azul Safira 4G - 4GB RAM Tela 6,3” Câm. Tripla + Câm. Selfie 25MP",
+            "price": 1.487,
+            "url": "",
+            "imageUrl": "https://a-static.mlcdn.com.br/160x160/smartphone-motorola-g8-plus-64gb-azul-safira-4g-4gb-ram-tela-63-cam-tripla-cam-selfie-25mp/magazineluiza/155567800/8ca6dc89844ee3abc39ab3bf7fb8a879.jpg",
+            "type": "celulares"
+        },
+        {
+            "id": 2,
+            "title": "iPhone 7 Apple 32GB Preto 4,7” 12MP - iOS Preto",
+            "price": 1.979,
+            "url": "",
+            "imageUrl": "https://a-static.mlcdn.com.br/160x160/iphone-7-apple-32gb-preto-47-12mp-ios/magazineluiza/218009200/36c59d783b1afb01ac9ce5604f25cdbd.jpg",
+            "type": "celulares"
+        },
+        {
+            "id": 3,
+            "title": "Smartphone Motorola Moto G8 Power Lite 64GB Aqua - 4G Octa-Core 4GB RAM 6,5” Câm. Tripla + Selfie 8MP Aqua",
+            "price": 1.301,
+            "url": "",
+            "imageUrl": "https://a-static.mlcdn.com.br/160x160/smartphone-motorola-moto-g8-power-lite-64gb-aqua-4g-octa-core-4gb-ram-65-cam-tripla-selfie-8mp/magazineluiza/155578300/b2b293091e6fe51f1900d6ccee94698b.jpg",
+            "type": "celulares"
+        },
+        {
+            "id": 4,
+            "title": "Livro - Os segredos da mente milionária",
+            "price": 26.20,
+            "url": "",
+            "imageUrl": "https://a-static.mlcdn.com.br/160x160/livro-os-segredos-da-mente-milionaria/prismacartuchos/osdmmaaem/79e7442dcefdee5a446dc62b13c16deb.jpg",
+            "type": "livros"
+        },
+        {
+            "id": 5,
+            "title": "Crash Bandicoot - N Sane Trilogy para PS4 - Activision PS4",
+            "price": 105.90,
+            "url": "",
+            "imageUrl": "https://a-static.mlcdn.com.br/160x160/crash-bandicoot-n-sane-trilogy-para-ps4-activision/magazineluiza/043176600/072979517a4b32e644653174af61bbcc.jpg",
+            "type": "games"
+        },
+        {
+            "id": 6,
+            "title": "Smartphone Samsung Galaxy A30s 64GB Violeta 4G - 4GB RAM Tela 6,4” Câm. Tripla + Câm. Selfie 16MP",
+            "price": 1.399,
+            "url": "",
+            "imageUrl": "https://a-static.mlcdn.com.br/352x470/smartphone-samsung-galaxy-a30s-64gb-violeta-4g-4gb-ram-tela-64-cam-tripla-cam-selfie-16mp/magazineluiza/155569800/1fbbf978058b835ddda0039c9f40b4c8.jpg",
+            "type": "celulares"
+        }
+    ]
+}

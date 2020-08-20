@@ -3,17 +3,24 @@
 }
 
 .page-menu-list {
-    list-style: none;
     display: flex;
     justify-items: center;
-    justify-content: center;
-    max-width: 800px;
+    max-width: 600px;
+    justify-content: space-between;
+    margin: auto;
 }
 
-.page-menu-list li {
+.page-menu-list .link {
     padding: 5px;
     margin-right: 20px;
     font-size: 17px;
     color: #fff;
     cursor: pointer;
+    text-decoration: none;
+}
+
+@media (min-width: 900px) {
+    .page-menu-list {
+        max-width: 800px;
+    }
 }
