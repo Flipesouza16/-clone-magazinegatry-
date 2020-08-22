@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Landing from '../pages/Landing/Landing';
-import Form from '../pages/Form/Form';
+import Form from '../components/Form/Form';
 
 export default Routes => {
     return (
@@ -12,6 +12,7 @@ export default Routes => {
                 <Route path="/livros" exact component={Landing} />
                 <Route path="/games" exact component={Landing} />
                 <Route path="/form" exact component={Form} />
+                <Route path="/edit/:id" exact component={Form} />
             </Switch>
         </BrowserRouter>
     )

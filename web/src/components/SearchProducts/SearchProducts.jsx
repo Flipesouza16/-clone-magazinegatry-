@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import './SearchProducts.css';
 import List from '../List/List';
 import PageMenu from '../PageMenu/PageMenu';
+import useApi from '../Utils/useApi';
 
 export default ({ titulo }) => {
     const path = window.location.pathname.replace('/', '');
@@ -13,15 +14,16 @@ export default ({ titulo }) => {
     const [search, setSearch] = useState('');
     const [products, setProducts] = useState([]);
 
-    useEffect(() => {
-        const params = {}
-        if (search) {
-            params.title_like = search
+    const [load, loadInfo] = useApi({
+        url: '/itens',
+        method: 'get',
+        params: {
+            title_like: search || undefined
         }
-        axios.get('http://localhost:5000/itens', { params })
-            .then(Response => {
-                setProducts(Response.data);
-            })
+    })
+
+    useEffect(() => {
+       load();
     }, [search]);
 
     return (
@@ -48,7 +50,11 @@ export default ({ titulo }) => {
 
                 <h2 className="page-body-titulo">{titulo[path] === undefined ? 'Celulares e Smartphones' : titulo[path]}</h2>
                 <div>
-                    <List products={products} />
+                    <List 
+                        products={loadInfo.data}
+                        loading={loadInfo.loading}
+                        error={loadInfo.error}    
+                    />
                 </div>
             </div>
         </div>

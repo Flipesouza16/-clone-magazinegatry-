@@ -1,0 +1,81 @@
+.page-header {
+    padding: 25px;
+    height: 32.88px;
+}
+
+.page-header .icon {
+    font-size: 25px;
+    width: 30px;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.page-form {
+    text-align: center;
+    color: rgb(116, 116, 116);
+}
+
+.page-form h1 {
+    margin-top: 35px;
+}
+
+.page-form label {
+    font-size: 20px;
+    padding: 8px;
+    font-weight: 700;
+    color: rgb(116, 116, 116);
+    display: flex;
+}
+
+.page-form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    max-width: 600px;
+}
+
+.page-form input {
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background: rgb(231, 231, 231);
+}
+
+.form-info {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-info input {
+    height: 20px;
+    width: 150px;
+}
+
+.form-info select {
+    margin-top: 10px;
+    height: 35px;
+}
+
+.page-form form button {
+    margin-top: 15px;
+    padding: 10px;
+    border: none;
+    font-size: 20px;
+    font-weight: 700;
+    color: whitesmoke;
+    background: #3aadef;
+    cursor: pointer;
+}
+
+.page-form .button-excluir {
+    background: rgb(224, 5, 5);
+}
+
+@media (min-width: 1200px) {
+    .form .page-header-logo {
+        margin: auto;
+    }
+}
