@@ -16,29 +16,29 @@ export default function useApi(config) {
             loading: true,
         })
         let response;
-        try {
+        try {  // trying to make a request on the backend
             response = await axios({
-                baseURL: 'http://localhost:5000',
-                ...config,
-                ...localConfig
+                baseURL: 'http://localhost:5000', // using the localhost port as baseUrl
+                ...config, // bringing all the data of the config variable (where the user will fill in when initializing the hooks)
+                ...localConfig // bringing all the data from the localConfig variable (where the user will fill in when initializing the call function)
             })
             setRequestInfo({
                 ...initialRequestInfo,
-                data: response.data,
+                data: response.data, // assigning the request values ​​to the data
             })
-        } catch (error) {
+        } catch (error) { // if there is an error, assign this problem to the variable error
             setRequestInfo({
                 ...initialRequestInfo,
                 error,
             })
         }
 
-        if (config.onCompleted) {
+        if (config.onCompleted) { // passing the values ​​in the request to the onCompleted attribute
             config.onCompleted(response);
         }
     }
 
-    return [
+    return [ // returns the call function and the Request data
         call,
         requestInfo
     ]

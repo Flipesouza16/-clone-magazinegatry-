@@ -12,48 +12,52 @@ export default ({ titulo }) => {
     const path = window.location.pathname.replace('/', '');
 
     const [search, setSearch] = useState('');
-    const [products, setProducts] = useState([]);
+    // const [products, setProducts] = useState([]);
 
+    // using my own hooks to request the backend
     const [load, loadInfo] = useApi({
         url: '/itens',
         method: 'get',
         params: {
-            title_like: search || undefined
+            title_like: search || undefined // parameter using to facilitate searches
         }
     })
 
     useEffect(() => {
-       load();
+        load();
     }, [search]);
 
     return (
         <div>
             <header className="page-header">
-                <h2 className="page-header-logo">Logo-Teste</h2>
-                <div className="page-header-input">
-                    <input
-                        placeholder="Buscar por um produto" type="text"
-                        value={search}
-                        onChange={e => setSearch(e.target.value)}
-                    />
-                    <button><FontAwesomeIcon icon="search" /></button>
-
+                <div className="page-header-main">
+                    <h2 className="page-header-logo">Logo-Teste</h2>
+                    <div className="page-header-input">
+                        <input
+                            placeholder="Buscar por um produto" type="text"
+                            value={search}
+                            onChange={e => setSearch(e.target.value)}
+                        />
+                        <button><FontAwesomeIcon icon="search" /></button>
+                    </div>
+                    <div className="button-cadastro">
+                        <Link className="page-header-button-cadastro" to='/form'>Cadastrar Novo Produto</Link>
+                    </div>
                 </div>
-                <div>
-                    <Link className="page-header-button-cadastro" to='/form'>Cadastrar Novo Produto</Link>
+                <div className="page-header-menu">
+                    <PageMenu />
                 </div>
             </header>
 
-            <PageMenu />
 
             <div className="page-body">
 
                 <h2 className="page-body-titulo">{titulo[path] === undefined ? 'Celulares e Smartphones' : titulo[path]}</h2>
                 <div>
-                    <List 
+                    <List
                         products={loadInfo.data}
                         loading={loadInfo.loading}
-                        error={loadInfo.error}    
+                        error={loadInfo.error}
                     />
                 </div>
             </div>

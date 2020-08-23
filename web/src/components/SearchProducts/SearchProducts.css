@@ -1,11 +1,16 @@
 .page-header {
-    background: #4b83f9;
+    background: var(--color-primary);
+}
+
+.page-header-main {
+    background: var(--color-primary);
     ;
+    width: 95vw;
     display: flex;
     justify-items: center;
     align-items: center;
     justify-content: space-between;
-    padding: 25px;
+    padding: 29px;
 }
 
 .page-header-input {
@@ -53,6 +58,79 @@
     color: #535353;
 }
 
+.page-header {
+    background: var(--color-primary);
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    justify-content: space-between;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "main main main" "menu menu menu";
+}
+
+.page-header-main {
+    grid-area: main;
+}
+
+.page-header-menu {
+    grid-area: menu;
+    width: 58vw;
+}
+
+@media (max-width: 450px) {
+    .page-header-menu {
+        display: none;
+    }
+}
+
+@media (max-width: 670px) {
+    .page-header-main {
+        display: grid;
+        align-items: center;
+        justify-content: space-between;
+        margin: auto;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: "logo logo logo" "input input input";
+    }
+    .page-header-logo {
+        grid-area: logo;
+        text-align: center;
+        margin-top: -40px;
+    }
+    .page-header-input {
+        margin: auto;
+        justify-content: center;
+    }
+    .page-header-input input {
+        grid-area: input;
+        margin-top: 15px;
+        margin-bottom: -20px;
+        width: 80vw;
+    }
+    .page-header-input button {
+        margin-top: 15px;
+        margin-bottom: -20px;
+    }
+    .button-cadastro {
+        display: none;
+    }
+    .page-header-main {
+        padding: 39px;
+    }
+    .form .page-header-logo {
+        text-transform: uppercase;
+        font-size: 35px;
+        color: whitesmoke;
+        margin: auto;
+    }
+}
+
+@media (max-width: 700px) {
+    .page-header-menu {
+        width: 80vw;
+    }
+}
+
 @media (min-width: 900px) {
     .page-header-input input {
         width: 450px;
@@ -88,9 +166,8 @@
 
 .page-body-titulo {
     margin-bottom: 30px;
-    color: #0a4c89;
+    color: var(--color-title);
     font-size: 30px;
-    /*margin: 30px 0 0 150px;*/
     text-align: center;
     margin-top: 30px;
 }

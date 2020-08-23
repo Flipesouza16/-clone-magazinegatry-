@@ -14,21 +14,24 @@ const initialValues = {
 }
 
 export default ({ id }) => {
+    // hooks useState to store form values, starting with initial values ​​("initialValues") if the id is false, otherwise starting with null
+
     const [values, setValues] = useState(id ? null : initialValues);
+    // route history
     const history = useHistory();
-    let errorCadastro = false;
+    // using my own hooks to request the backend
     const [load, loadingInfo] = useApi({
         url: `/itens/${id}`,
         method: 'get',
-        onCompleted: (response) => {
+        onCompleted: (response) => {  // hooks function useApi to pass request values ​​to const "values"
             setValues(response.data);
         }
     })
 
-    const [save, saveInfo] = useApi({
-        url: id ? `/itens/${id}` : `/itens`,
-        method: id ? 'put' : 'post',
-        onCompleted: (response) => {
+    const [save, saveInfo] = useApi({ //hooks useApi
+        url: id ? `/itens/${id}` : `/itens`, // Checking if the id is true to use the url to put method, otherwise post
+        method: id ? 'put' : 'post', // Checking method
+        onCompleted: (response) => {    // Function to return to the initial route if no error occurred
             if(!response.error) {
                 history.push('/')
             }
@@ -42,14 +45,14 @@ export default ({ id }) => {
     }, [id]);
 
     function onChange(e) {
-        const { name, value } = e.target;
-        setValues({ ...values, [name]: value });
+        const { name, value } = e.target; // taking the target's "name" and "value" values
+        setValues({ ...values, [name]: value }); // assigned a copy of "values" along with "name" and "value" to const values
     }
 
     function onSubmit(e) {
         e.preventDefault();
 
-       save({
+       save({ // using the save function and passing the form values ​​to the backend
            data: values
        })
     }
@@ -72,7 +75,7 @@ export default ({ id }) => {
 
             <div className="page-form">
                 <h1>{id ? 'Atualizar Produto' : 'Cadastrar um novo produto'}</h1>
-                {!values
+                {!values     // if the values ​​are false, displays the message "Carregando"
                     ? <div>Carregando...</div>
                     : <>
                         <form onSubmit={onSubmit}>

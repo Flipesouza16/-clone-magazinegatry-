@@ -1,6 +1,9 @@
-.page-header {
-    padding: 25px;
+.form .page-header {
+    padding: 29px;
     height: 32.88px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .page-header .icon {
@@ -66,7 +69,7 @@
     font-size: 20px;
     font-weight: 700;
     color: whitesmoke;
-    background: #3aadef;
+    background: var(--color-secundary);
     cursor: pointer;
 }
 
