@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link, useHistory } from 'react-router-dom';
-import axios from 'axios';
 
 import './Form.css';
+import api from '../../services/api';
 import useApi from '../../components/Utils/useApi';
 
 const initialValues = {
@@ -20,8 +20,8 @@ export default ({ id }) => {
     // route history
     const history = useHistory();
     // using my own hooks to request the backend
-    const [load, loadingInfo] = useApi({
-        url: `/itens/${id}`,
+    const [load] = useApi({
+        url: `/products/${id}`,
         method: 'get',
         onCompleted: (response) => {  // hooks function useApi to pass request values ​​to const "values"
             setValues(response.data);
@@ -29,7 +29,7 @@ export default ({ id }) => {
     })
 
     const [save, saveInfo] = useApi({ //hooks useApi
-        url: id ? `/itens/${id}` : `/itens`, // Checking if the id is true to use the url to put method, otherwise post
+        url: id ? `/products/${id}` : `/products`, // Checking if the id is true to use the url to put method, otherwise post
         method: id ? 'put' : 'post', // Checking method
         onCompleted: (response) => {    // Function to return to the initial route if no error occurred
             if(!response.error) {
@@ -42,6 +42,7 @@ export default ({ id }) => {
         if (id) {
             load();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [id]);
 
     function onChange(e) {
@@ -60,7 +61,7 @@ export default ({ id }) => {
     function onDelete(e) {
         e.preventDefault();
 
-        axios.delete(`http://localhost:5000/itens/${id}`)
+        api.delete(`http://localhost:3001/products/${id}`)
             .then(response => {
                 history.push('/');
             })

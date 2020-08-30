@@ -12,7 +12,7 @@ export default Routes => {
                 <Route path="/livros" exact component={Landing} />
                 <Route path="/games" exact component={Landing} />
                 <Route path="/form" exact component={Form} />
-                <Route path="/edit/:id" exact component={Form} />
+                <Route path="/products/:id" exact component={Form} />
             </Switch>
         </BrowserRouter>
     )

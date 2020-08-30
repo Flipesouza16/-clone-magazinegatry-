@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 export default ({ product }) => {
     return (
-        <Link className="button-link" to={`/edit/${product.id}`}>
+        <Link className="button-link" to={`/products/${product._id}`}>
             <div className="components-card">
                 <img className="components-card-image" src={product.imageUrl} alt={product.tite} />
 

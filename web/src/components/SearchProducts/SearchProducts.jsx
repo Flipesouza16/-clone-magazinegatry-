@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios'
+import React, { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 
@@ -9,14 +8,15 @@ import PageMenu from '../PageMenu/PageMenu';
 import useApi from '../Utils/useApi';
 
 export default ({ titulo }) => {
+    const mountRef = useRef(null);
     const path = window.location.pathname.replace('/', '');
-
     const [search, setSearch] = useState('');
     // const [products, setProducts] = useState([]);
 
     // using my own hooks to request the backend
     const [load, loadInfo] = useApi({
-        url: '/itens',
+        debounceDelay: 300,
+        url: `/products`,
         method: 'get',
         params: {
             title_like: search || undefined // parameter using to facilitate searches
@@ -24,7 +24,14 @@ export default ({ titulo }) => {
     })
 
     useEffect(() => {
-        load();
+        load({
+            debounced: mountRef.current,
+        });
+
+        if (!mountRef.current) {
+            mountRef.current = true;
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [search]);
 
     return (
