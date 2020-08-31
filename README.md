@@ -2,6 +2,13 @@
 
 <h2>Start</h2>
 
+Clone this repo with following command:
+``` 
+# git clone https://github.com/Flipesouza16/-clone-magazinegatry 
+
+```
+
+
 ```
 # 1. Go to the files "api_node and "web";
 
