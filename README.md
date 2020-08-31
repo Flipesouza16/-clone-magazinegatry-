@@ -4,7 +4,7 @@
 
 Clone this repo with following command:
 ``` 
-# git clone https://github.com/Flipesouza16/-clone-magazinegatry 
+# git clone https://github.com/Flipesouza16/-clone-magazinegatry-.git
 
 ```
 
