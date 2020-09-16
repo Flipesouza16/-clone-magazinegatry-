@@ -9,6 +9,7 @@ import useApi from '../../components/Utils/useApi';
 const initialValues = {
     title: '',
     imageUrl: '',
+    url: '',
     price: '',
     type: ''
 }
@@ -32,7 +33,7 @@ export default ({ id }) => {
         url: id ? `/products/${id}` : `/products`, // Checking if the id is true to use the url to put method, otherwise post
         method: id ? 'put' : 'post', // Checking method
         onCompleted: (response) => {    // Function to return to the initial route if no error occurred
-            if(!response.error) {
+            if (!response.error) {
                 history.push('/')
             }
         }
@@ -53,9 +54,9 @@ export default ({ id }) => {
     function onSubmit(e) {
         e.preventDefault();
 
-       save({ // using the save function and passing the form values ​​to the backend
-           data: values
-       })
+        save({ // using the save function and passing the form values ​​to the backend
+            data: values
+        })
     }
 
     function onDelete(e) {
@@ -98,6 +99,17 @@ export default ({ id }) => {
                                 name="imageUrl"
                                 type="text"
                                 value={values.imageUrl}
+                                placeholder="Image Url"
+                                onChange={onChange}
+                                required />
+                            <label
+                                htmlFor="url">
+                                Link do Produto
+                        </label>
+                            <input
+                                name="url"
+                                type="text"
+                                value={values.url}
                                 placeholder="http://..."
                                 onChange={onChange}
                                 required />
@@ -124,8 +136,8 @@ export default ({ id }) => {
                                     required
                                     onChange={onChange}
                                 >
-                                    >
-                                <option hidden value="">
+
+                                    <option hidden value="">
                                         Escolha uma opção
                                 </option>
                                     <option

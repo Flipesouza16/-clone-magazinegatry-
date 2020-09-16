@@ -3,7 +3,6 @@
     flex-direction: column;
     max-width: 140px;
     height: 355px;
-    cursor: pointer;
 }
 
 .components-card-image {
@@ -34,4 +33,16 @@
 
 .button-link {
     text-decoration: none;
+}
+
+.button-url {
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background-color: #777;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
 }
